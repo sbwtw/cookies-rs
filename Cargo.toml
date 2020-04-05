@@ -1,6 +1,6 @@
 [package]
 name = "cookies-rs"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["石博文 <sbw@sbw.so>"]
 description = "Load cookies.txt and save into CookieJar"
 license-file = "LICENSE"

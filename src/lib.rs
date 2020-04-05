@@ -1,3 +1,24 @@
+//!
+//! cookies-rs Provide a macro to load your `Cookies.txt` into a `CookieJar`.
+//!
+//! # Usage
+//!
+//! Add dependencies to `Cargo.toml`
+//! ```ignore
+//! cookies-rs = "*"
+//! ```
+//!
+//! And load Cookies from file:
+//!
+//! ```rust
+//! use cookies_rs::load_cookies;
+//!
+//! let jar = load_cookies!("/home/cookies.txt").unwrap();
+//! for cookie in jar.iter() {
+//!     println!("{:?}", cookie);
+//! }
+//! ```
+//!
 
 mod parser;
 
@@ -17,6 +38,16 @@ pub fn read_from_file<P: AsRef<Path>>(p: P) -> io::Result<CookieJar> {
     Ok(parser.cookie_jar())
 }
 
+/// # Load Cookies.txt into CookieJar
+///
+/// ```rust
+/// use cookies_rs::load_cookies;
+///
+/// let jar = load_cookies!("/home/cookies.txt").unwrap();
+/// for cookie in jar.iter() {
+///     println!("{:?}", cookie);
+/// }
+/// ```
 #[macro_export]
 macro_rules! load_cookies {
     ($file:expr) => {{
