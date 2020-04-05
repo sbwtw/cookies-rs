@@ -1,0 +1,18 @@
+[package]
+name = "cookies-rs"
+version = "0.1.0"
+authors = ["石博文 <sbw@sbw.so>"]
+description = "Load cookies.txt and save into CookieJar"
+license = "MIT"
+license-file = "LICENSE"
+documentation = "https://docs.rs/cookies-rs"
+homepage = "https://github.com/sbwtw/cookies-rs"
+edition = "2018"
+
+[profile.release]
+lto = true
+
+[dependencies]
+cookie = "^0.13"
+regex = "^1.3"
+time = "^0.2"
